@@ -1,0 +1,2390 @@
+:root {
+  /* Navegación */
+  --header-bg: #0B2239;
+  --header-name-text: #FFFFFF;
+  --header-nav-text: #FFFFFF;
+  --header-text: var(--header-nav-text);
+
+  /* Inicio */
+  --hero-bg: #2B1D16;
+  --hero-title-text: #FFFFFF;
+  --hero-copy-text: #FFFFFF;
+  --hero-cta-bg: #0B2239;
+  --hero-cta-text: #FFFFFF;
+
+  /* Menú */
+  --menu-bg: #2B1D16;
+  --menu-card-bg: #FFFFFF;
+  --menu-eyebrow-text: #D6A85F;
+  --menu-title-text: #000000;
+  --menu-description-text: #374151;
+  --menu-button-bg: #0B2239;
+  --menu-button-text: #FFFFFF;
+
+  /* Beneficios */
+  --benefits-bg: #0B2239;
+  --benefits-eyebrow-text: #FFFFFF;
+  --benefits-title-text: #FFFFFF;
+  --benefits-description-text: #FFFFFF;
+  --benefits-text: var(--benefits-title-text);
+
+  /* Galería */
+  --gallery-bg: #FFFFFF;
+  --gallery-title-text: #000000;
+
+  /* FAQ */
+  --faq-bg: #000000;
+  --faq-title-text: #000000;
+
+  /* Contacto */
+  --contact-bg: #FFF9F2;
+  --contact-eyebrow-text: #D6A85F;
+  --contact-title-text: #000000;
+  --contact-description-text: #374151;
+  --address-card-bg: #FFFFFF;
+  --address-text: #000000;
+  --hours-card-bg: #FFFFFF;
+  --hours-days-text: #000000;
+  --hours-hours-text: #000000;
+  --phone-card-bg: #FFFFFF;
+  --phone-text: #000000;
+  --email-card-bg: #FFFFFF;
+  --email-text: #000000;
+  --maps-button-bg: #FFFFFF;
+  --maps-button-text: #0B2239;
+  --whatsapp-button-bg: #16A34A;
+  --whatsapp-button-text: #FFFFFF;
+
+  /* Footer */
+  --footer-bg: #0B2239;
+  --footer-text: #FFFFFF;
+
+  /* Variables generales de respaldo */
+  --main-bg: #FFF9F2;
+  --surface-bg: #FFFFFF;
+  --primary: #A63D2F;
+  --primary-text: #FFFFFF;
+  --accent: #D6A85F;
+  --text: #2B2420;
+  --muted: #756A63;
+
+  --container: 1120px;
+  --radius: 24px;
+  --shadow: 0 18px 50px rgba(43, 36, 32, 0.12);
+  --whatsapp: #25D366;
+  --whatsapp-dark: #1EBE5D;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+
+body {
+  margin: 0;
+
+  color: var(--text);
+  background: var(--main-bg);
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.6;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+a {
+  color: inherit;
+}
+
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.container {
+  width: min(calc(100% - 40px), var(--container));
+  margin-inline: auto;
+}
+
+
+.section {
+  padding: 96px 0;
+}
+
+
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+.skip-link {
+  position: fixed;
+
+  top: -70px;
+  left: 12px;
+
+  z-index: 9999;
+
+  padding: 10px 14px;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #111111;
+}
+
+
+.skip-link:focus {
+  top: 12px;
+}
+
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--header-bg) 95%,
+      transparent
+    );
+
+  color: var(--header-text);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+}
+
+
+.nav-wrap {
+  position: relative;
+
+  min-height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+
+.brand {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  font-weight: 850;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   LOGO DEL NEGOCIO
+   ========================================================= */
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+
+  object-fit: contain;
+
+  border-radius: 0;
+
+  background: transparent;
+}
+
+
+.brand-mark {
+  display: none;
+
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  color: #241A16;
+
+  font-size: 12px;
+
+  font-weight: 900;
+}
+
+
+.brand-logo.is-hidden {
+  display: none;
+}
+
+
+.brand-mark.is-visible {
+  display: grid;
+}
+
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+.nav-links a {
+  position: relative;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 750;
+}
+
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: -7px;
+
+  height: 2px;
+
+  transform: scaleX(0);
+
+  background: var(--accent);
+
+  transition: transform 0.2s ease;
+}
+
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+
+
+/* =========================================================
+   BOTÓN HAMBURGUESA
+   ========================================================= */
+
+.nav-toggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  flex: 0 0 44px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.28);
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.nav-toggle:hover {
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(255, 255, 255, 0.45);
+}
+
+
+.nav-toggle-line {
+  display: block;
+
+  width: 21px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: currentColor;
+
+  transform-origin: center;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+
+/* PRIMERA LÍNEA → X */
+
+.nav-toggle.is-open
+.nav-toggle-line:nth-child(1) {
+  transform:
+    translateY(7px)
+    rotate(45deg);
+}
+
+
+/* LÍNEA CENTRAL DESAPARECE */
+
+.nav-toggle.is-open
+.nav-toggle-line:nth-child(2) {
+  opacity: 0;
+
+  transform: scaleX(0);
+}
+
+
+/* TERCERA LÍNEA → X */
+
+.nav-toggle.is-open
+.nav-toggle-line:nth-child(3) {
+  transform:
+    translateY(-7px)
+    rotate(-45deg);
+}
+
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 12px 22px;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background: var(--primary);
+
+  color: var(--primary-text);
+
+  text-decoration: none;
+
+  font-weight: 850;
+
+  box-shadow:
+    0 10px 24px
+    color-mix(
+      in srgb,
+      var(--primary) 25%,
+      transparent
+    );
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+
+.btn-outline {
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--primary) 55%,
+      transparent
+    );
+
+  background: transparent;
+
+  color: var(--primary);
+
+  box-shadow: none;
+}
+
+
+.btn-whatsapp {
+  gap: 8px;
+
+  background: var(--whatsapp);
+
+  color: #FFFFFF;
+
+  box-shadow:
+    0 10px 24px
+    rgba(37, 211, 102, 0.24);
+}
+
+
+.btn-whatsapp:hover {
+  background: var(--whatsapp-dark);
+}
+
+
+.btn-whatsapp-icon {
+  width: 20px;
+  height: 20px;
+
+  fill: currentColor;
+}
+
+
+
+/* =========================================================
+   TEXTOS
+   ========================================================= */
+
+.eyebrow {
+  margin: 0 0 14px;
+
+  color: var(--accent);
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+.section-heading {
+  max-width: 760px;
+
+  margin-bottom: 42px;
+}
+
+
+.centered-heading {
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+
+.section-heading h2,
+.contact-copy h2,
+.menu-card-main h2 {
+  margin: 0 0 18px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(38px, 5vw, 62px);
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+}
+
+
+.section-heading > p:not(.eyebrow),
+.contact-intro,
+.menu-card-main p {
+  margin-top: 0;
+
+  color: var(--muted);
+}
+
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  min-height:
+    calc(100vh - 72px);
+
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  /*
+  IMPORTANTE:
+  sin Excel conectado NO cargamos ninguna imagen de la carpeta img.
+  El color se controla con --hero-bg y app.js agrega la imagen
+  solamente después de leer Datos_Restaurante.xlsx.
+  */
+  background-color: var(--hero-bg);
+  background-image: none;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(24, 15, 12, 0.88),
+      rgba(24, 15, 12, 0.48) 58%,
+      rgba(24, 15, 12, 0.58)
+    );
+}
+
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 90px 0;
+}
+
+
+.hero-content > * {
+  max-width: 760px;
+}
+
+
+.hero h1 {
+  margin: 0;
+
+  max-width: 900px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(52px, 8vw, 100px);
+
+  line-height: 0.94;
+
+  letter-spacing: -0.055em;
+}
+
+
+.hero-copy {
+  margin: 28px 0 0;
+
+  max-width: 620px;
+
+  color:
+    rgba(255, 255, 255, 0.84);
+
+  font-size:
+    clamp(17px, 2vw, 20px);
+}
+
+
+.hero-actions {
+  margin-top: 32px;
+}
+
+
+.scroll-cue {
+  position: absolute;
+
+  left: 50%;
+  bottom: 20px;
+
+  z-index: 2;
+
+  transform: translateX(-50%);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 28px;
+
+  animation: bounce 1.8s infinite;
+}
+
+
+@keyframes bounce {
+
+  50% {
+    transform:
+      translate(-50%, 7px);
+  }
+
+}
+
+
+
+/* =========================================================
+   MENÚ
+   ========================================================= */
+
+.menu-section {
+  position: relative;
+
+  isolation: isolate;
+
+  overflow: hidden;
+
+  /*
+  Cuando en Excel se selecciona Color,
+  este es el fondo visible de la sección.
+  */
+  background-color: var(--menu-bg);
+
+  /*
+  Cuando en Excel se selecciona Imagen,
+  app.js coloca aquí la imagen indicada
+  en MENU > fondo_imagen.
+  */
+  background-image: none;
+
+  background-position: center;
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+}
+
+
+.menu-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  /*
+  En modo Color dejamos el fondo sin capa oscura
+  para que se vea exactamente el color elegido.
+  */
+  background: transparent;
+
+  pointer-events: none;
+}
+
+
+/*
+Si se selecciona Imagen desde Excel, JavaScript
+agrega esta clase y activamos la capa oscura para
+mantener contraste con la tarjeta del menú.
+*/
+.menu-section.has-background-image .menu-overlay {
+  background: rgba(24, 15, 12, 0.72);
+}
+
+
+.menu-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+.menu-card-main {
+  width: min(100%, 760px);
+
+  padding: 48px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: var(--radius);
+
+  background:
+    rgba(255, 255, 255, 0.93);
+
+  box-shadow: var(--shadow);
+
+  text-align: center;
+
+  backdrop-filter: blur(8px);
+}
+
+
+.menu-card-main p {
+  max-width: 620px;
+
+  margin-inline: auto;
+}
+
+
+.menu-card-main .btn {
+  margin-top: 12px;
+}
+
+
+
+/* =========================================================
+   BENEFICIOS
+   ========================================================= */
+
+.benefits-section {
+  position: relative;
+
+  isolation: isolate;
+
+  overflow: hidden;
+
+  /*
+  Por defecto usamos rojo como color de respaldo.
+  Cuando el Excel está conectado, el color elegido en
+  BENEFICIOS > fondo_color tiene prioridad.
+  */
+
+  background-color: var(--benefits-bg);
+
+  /*
+  Si en Excel se selecciona Imagen,
+  app.js coloca aquí la fotografía indicada en:
+
+  BENEFICIOS > fondo_imagen
+  */
+
+  background-image: none;
+
+  background-position: center;
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+}
+
+
+/*
+Capa oscura únicamente cuando se utiliza una imagen
+de fondo. Ayuda a mantener legibles los textos blancos
+sin afectar las tarjetas.
+*/
+
+.benefits-section.has-background-image::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  /*
+  IMPORTANTE:
+  cuando se utiliza una imagen de fondo, no mezclamos
+  el color de respaldo encima de la fotografía.
+  */
+  background: transparent;
+
+  pointer-events: none;
+}
+
+
+/*
+Todo el contenido queda por encima del fondo
+y de la capa oscura.
+*/
+
+.benefits-section > .container {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/*
+TEXTOS FUERA DE LAS TARJETAS
+
+El usuario puede cambiar este color desde:
+
+BENEFICIOS > texto_color
+*/
+
+.benefits-section .section-heading .eyebrow,
+.benefits-section .section-heading h2,
+.benefits-section .section-heading > p:not(.eyebrow) {
+  color: var(--benefits-text);
+}
+
+
+.benefits-grid {
+  /*
+  FLEXBOX permite que cada fila incompleta quede centrada
+  automáticamente:
+
+  1 beneficio  -> 1 carta centrada
+  2 beneficios -> 2 cartas centradas
+  3 beneficios -> 3 cartas centradas
+  4 beneficios -> 4 cartas alineadas
+  5 beneficios -> 4 arriba + 1 centrada abajo
+  6 beneficios -> 4 arriba + 2 centradas abajo
+  7 beneficios -> 4 arriba + 3 centradas abajo
+  8 beneficios -> 4 arriba + 4 abajo
+
+  El patrón se repite para 9, 10, 11, 12, etc.
+  */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 18px;
+}
+
+
+.benefit-card {
+  /*
+  En escritorio cada tarjeta conserva el ancho equivalente
+  a una cuadrícula de 4 columnas. Al no crecer, las filas
+  incompletas se pueden centrar correctamente.
+  */
+  flex: 0 1 calc((100% - 54px) / 4);
+  width: calc((100% - 54px) / 4);
+  min-width: 0;
+
+  min-height: 230px;
+
+  padding: 28px 24px;
+
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--muted) 14%,
+      transparent
+    );
+
+  border-radius: 20px;
+
+  background: var(--surface-bg);
+
+  box-shadow:
+    0 10px 30px
+    rgba(43, 36, 32, 0.07);
+}
+
+
+.benefit-icon {
+  display: grid;
+
+  place-items: center;
+
+  width: 46px;
+  height: 46px;
+
+  margin-bottom: 22px;
+
+  border-radius: 14px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--accent) 25%,
+      var(--surface-bg)
+    );
+
+  color: var(--primary);
+
+  font-size: 22px;
+
+  font-weight: 900;
+}
+
+
+.benefit-card h3 {
+  margin: 0 0 10px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  line-height: 1.1;
+}
+
+
+.benefit-card p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+
+
+/* =========================================================
+   GALERÍA
+   ========================================================= */
+
+.gallery-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background-color: var(--gallery-bg);
+  background-image: none;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gallery-section.has-background-image::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  /*
+  La imagen de fondo se muestra sin ser cubierta
+  por el color de respaldo de Galería.
+  */
+  background: transparent;
+
+  pointer-events: none;
+}
+
+.gallery-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-heading {
+  max-width: 900px;
+}
+
+.gallery-section .gallery-heading h2 {
+  color: var(--gallery-title-text);
+}
+
+.gallery-grid {
+  /*
+  Igual que en Beneficios:
+  cada fila incompleta queda centrada automáticamente.
+  */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 18px;
+}
+
+.gallery-card {
+  flex: 0 1 calc((100% - 54px) / 4);
+  width: calc((100% - 54px) / 4);
+  min-width: 0;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--muted) 14%,
+      transparent
+    );
+
+  border-radius: 20px;
+
+  background: #F3F4F6;
+
+  box-shadow:
+    0 10px 30px
+    rgba(43, 36, 32, 0.09);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faq-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background-color: var(--faq-bg);
+  background-image: none;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.faq-section.has-background-image::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  /*
+  La imagen de fondo se muestra sin ser cubierta
+  por el color de respaldo de FAQ.
+  */
+  background: transparent;
+
+  pointer-events: none;
+}
+
+.faq-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.faq-heading {
+  max-width: 900px;
+}
+
+.faq-section .faq-heading h2 {
+  color: var(--faq-title-text);
+}
+
+.faq-list {
+  width: min(100%, 900px);
+
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.faq-item {
+  overflow: hidden;
+
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--muted) 14%,
+      transparent
+    );
+
+  border-radius: 18px;
+
+  background: var(--faq-card-bg, #FFFFFF);
+
+  box-shadow:
+    0 8px 26px
+    rgba(43, 36, 32, 0.08);
+}
+
+.faq-question {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  width: 100%;
+
+  padding: 20px 58px 20px 24px;
+
+  color: var(--faq-question-text, #000000);
+
+  cursor: pointer;
+
+  list-style: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1.25;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question::after {
+  content: "+";
+
+  position: absolute;
+
+  top: 50%;
+  right: 24px;
+
+  transform: translateY(-50%);
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 28px;
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.faq-item[open] .faq-question::after {
+  content: "−";
+}
+
+.faq-answer {
+  padding: 0 24px 22px;
+
+  color: var(--faq-answer-text, #374151);
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.contact-section {
+  background: var(--main-bg);
+}
+
+
+.contact-grid {
+  display: grid;
+
+  grid-template-columns:
+    0.9fr 1.1fr;
+
+  gap: 54px;
+
+  align-items: stretch;
+}
+
+
+.contact-copy h2 {
+  max-width: 620px;
+}
+
+
+.contact-intro {
+  max-width: 580px;
+}
+
+
+.contact-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+
+.contact-item {
+  padding: 18px;
+
+  border-radius: 16px;
+
+  background: var(--surface-bg);
+
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--muted) 13%,
+      transparent
+    );
+}
+
+
+.contact-item span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+.contact-item strong {
+  color: var(--text);
+}
+
+
+.contact-item a {
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   FORMATO ESPECÍFICO DE HORARIO Y CORREO
+   ========================================================= */
+
+.contact-value {
+  display: block;
+
+  min-width: 0;
+}
+
+
+.contact-value-hours {
+  line-height: 1.45;
+}
+
+
+.contact-line {
+  display: block;
+}
+
+
+/*
+El correo puede ser más largo que el ancho de la tarjeta.
+Permitimos que se corte de forma limpia en dos líneas
+sin desbordarse.
+*/
+
+.contact-value-email {
+  display: block;
+
+  max-width: 100%;
+
+  overflow-wrap: anywhere;
+
+  word-break: normal;
+
+  line-height: 1.45;
+}
+
+
+.contact-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+
+.map-card {
+  min-height: 520px;
+
+  overflow: hidden;
+
+  border-radius: var(--radius);
+
+  background: var(--surface-bg);
+
+  box-shadow: var(--shadow);
+}
+
+
+.map-card iframe {
+  width: 100%;
+
+  height: 100%;
+
+  min-height: 520px;
+
+  border: 0;
+}
+
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+  padding: 52px 0 24px;
+
+  background: var(--footer-bg);
+
+  color: var(--footer-text);
+}
+
+
+.footer-main-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.25fr 0.9fr 1fr;
+
+  gap: 72px;
+
+  align-items: start;
+}
+
+
+.footer-column h3 {
+  margin: 0 0 18px;
+
+  color: var(--footer-text);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 21px;
+
+  line-height: 1.2;
+}
+
+
+.footer-about h3 {
+  text-transform: uppercase;
+
+  letter-spacing: 0.01em;
+}
+
+
+.site-footer p {
+  margin: 0;
+
+  color:
+    color-mix(
+      in srgb,
+      var(--footer-text) 78%,
+      transparent
+    );
+}
+
+
+.footer-about p {
+  max-width: 380px;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+.footer-links {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 12px;
+}
+
+
+.footer-links a {
+  position: relative;
+
+  color:
+    color-mix(
+      in srgb,
+      var(--footer-text) 92%,
+      transparent
+    );
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 650;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.footer-links a:hover {
+  opacity: 0.78;
+
+  transform: translateX(3px);
+}
+
+
+.footer-contact-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.footer-contact-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  color:
+    color-mix(
+      in srgb,
+      var(--footer-text) 92%,
+      transparent
+    );
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+.footer-contact-item:hover {
+  opacity: 0.82;
+}
+
+
+.footer-contact-icon {
+  display: inline-grid;
+
+  flex: 0 0 18px;
+
+  place-items: center;
+
+  width: 18px;
+  height: 22px;
+}
+
+
+.footer-contact-icon svg {
+  width: 16px;
+  height: 16px;
+
+  fill: currentColor;
+}
+
+
+.footer-socials {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+
+.footer-social-link {
+  display: grid;
+
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--footer-text) 28%,
+      transparent
+    );
+
+  border-radius: 50%;
+
+  color: var(--footer-text);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.footer-social-link:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--footer-text) 55%,
+      transparent
+    );
+
+  background:
+    color-mix(
+      in srgb,
+      var(--footer-text) 10%,
+      transparent
+    );
+}
+
+
+.footer-social-link svg {
+  width: 21px;
+  height: 21px;
+
+  fill: currentColor;
+}
+
+
+.footer-divider {
+  margin-top: 42px;
+
+  border-top:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--footer-text) 18%,
+      transparent
+    );
+}
+
+
+.footer-bottom {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding-top: 18px;
+
+  text-align: center;
+}
+
+
+.footer-bottom p {
+  font-size: 12px;
+}
+
+
+.footer-credit {
+  color:
+    color-mix(
+      in srgb,
+      var(--footer-text) 58%,
+      transparent
+    )
+    !important;
+
+  font-size: 9px !important;
+
+  line-height: 1.4;
+}
+
+
+.footer-credit a {
+  color: var(--footer-text);
+
+  font-size: inherit;
+
+  font-weight: 850;
+
+  text-underline-offset: 3px;
+}
+
+
+
+/* =========================================================
+   WHATSAPP FLOTANTE
+   ========================================================= */
+
+.floating-whatsapp {
+  position: fixed;
+
+  right: 24px;
+  bottom: 24px;
+
+  z-index: 99998;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 66px;
+  height: 66px;
+
+  border: 4px solid #FFFFFF;
+
+  border-radius: 50%;
+
+  background: var(--whatsapp);
+
+  color: #FFFFFF;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.floating-whatsapp:hover {
+  transform:
+    translateY(-4px)
+    scale(1.03);
+
+  background: var(--whatsapp-dark);
+
+  box-shadow:
+    0 14px 34px
+    rgba(0, 0, 0, 0.28);
+}
+
+
+.floating-whatsapp svg {
+  width: 37px;
+  height: 37px;
+
+  fill: currentColor;
+}
+
+
+
+/* =========================================================
+   MENSAJES
+   ========================================================= */
+
+.config-notice {
+  position: fixed;
+
+  left: 50%;
+  bottom: 16px;
+
+  z-index: 1000;
+
+  width:
+    min(
+      calc(100% - 180px),
+      720px
+    );
+
+  transform:
+    translateX(-50%);
+
+  padding: 14px 18px;
+
+  border-radius: 14px;
+
+  background: #1F2937;
+
+  color: #FFFFFF;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.25);
+
+  font-size: 14px;
+}
+
+
+
+/* =========================================================
+   PANEL EXCEL LOCAL
+   ========================================================= */
+
+.local-excel-panel {
+  position: fixed;
+
+  left: 18px;
+
+  right: auto;
+
+  bottom: 18px;
+
+  z-index: 99999;
+
+  width: 280px;
+
+  padding: 16px;
+
+  border:
+    1px solid
+    rgba(0, 0, 0, 0.12);
+
+  border-radius: 14px;
+
+  background: #FFFFFF;
+
+  color: #2B2420;
+
+  box-shadow:
+    0 8px 30px
+    rgba(0, 0, 0, 0.18);
+
+  font-family:
+    Arial,
+    sans-serif;
+}
+
+
+.local-excel-panel strong {
+  font-weight: 800;
+}
+
+
+.local-excel-title {
+  margin-bottom: 6px;
+
+  font-weight: 800;
+}
+
+
+.local-excel-copy,
+.local-excel-status {
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+
+.local-excel-copy {
+  margin-bottom: 10px;
+
+  opacity: 0.82;
+}
+
+
+.local-excel-status {
+  margin-top: 8px;
+}
+
+
+.local-excel-button {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  background: var(--primary);
+
+  color: var(--primary-text);
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+.local-excel-input {
+  display: none;
+
+  width: 100%;
+
+  margin-top: 10px;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+  /*
+  BENEFICIOS EN TABLET
+  Máximo 2 tarjetas por fila. Si queda una sola en la
+  última fila, se mantiene centrada.
+  */
+  .benefit-card {
+    flex-basis: calc((100% - 18px) / 2);
+    width: calc((100% - 18px) / 2);
+  }
+
+
+  /*
+  GALERÍA EN TABLET
+  Máximo 2 imágenes por fila y la última fila queda centrada.
+  */
+  .gallery-card {
+    flex-basis: calc((100% - 18px) / 2);
+    width: calc((100% - 18px) / 2);
+  }
+
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .map-card,
+  .map-card iframe {
+    min-height: 420px;
+  }
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE MÓVIL
+   ========================================================= */
+
+@media (max-width: 780px) {
+
+
+  /* BOTÓN HAMBURGUESA */
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+
+  /*
+  MENÚ DESPLEGABLE
+  */
+
+  .nav-links {
+    display: none;
+
+    position: absolute;
+
+    top: 72px;
+
+    left: -20px;
+    right: -20px;
+
+    padding: 16px 20px 22px;
+
+    background: var(--header-bg);
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    border-top:
+      1px solid
+      rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+      0 14px 30px
+      rgba(0, 0, 0, 0.18);
+  }
+
+
+  .nav-links.open {
+    display: flex;
+  }
+
+
+  .nav-links a {
+    width: 100%;
+
+    padding: 13px 5px;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.07);
+
+    font-size: 14px;
+  }
+
+
+  .nav-links a:last-child {
+    border-bottom: 0;
+  }
+
+
+  .nav-links a::after {
+    display: none;
+  }
+
+
+  /*
+  EVITAMOS QUE EL NOMBRE DEL
+  RESTAURANTE EMPUJE EL BOTÓN
+  HAMBURGUESA.
+  */
+
+  .brand {
+    min-width: 0;
+
+    max-width:
+      calc(100% - 60px);
+  }
+
+
+  #brandNombre {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+  }
+.contact-list {
+    grid-template-columns: 1fr;
+  }
+
+
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+
+    gap: 36px;
+  }
+
+
+  .footer-about p {
+    max-width: 620px;
+  }
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE TELÉFONOS PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+  .container {
+    width:
+      min(
+        calc(100% - 28px),
+        var(--container)
+      );
+  }
+
+
+  .section {
+    padding: 72px 0;
+  }
+
+
+  .hero {
+    min-height: 720px;
+  }
+
+
+  .hero h1 {
+    font-size:
+      clamp(
+        50px,
+        16vw,
+        76px
+      );
+  }
+
+
+  .menu-card-main {
+    padding: 34px 24px;
+  }
+
+
+  /*
+  BENEFICIOS EN MÓVIL
+  Una tarjeta por fila ocupando todo el ancho disponible.
+  */
+  .benefit-card {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+
+  /*
+  GALERÍA EN MÓVIL
+  Una imagen por fila.
+  */
+  .gallery-card {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+
+  .faq-question {
+    padding:
+      18px
+      52px
+      18px
+      20px;
+
+    font-size: 18px;
+  }
+
+
+  .faq-question::after {
+    right: 20px;
+  }
+
+
+  .faq-answer {
+    padding:
+      0
+      20px
+      20px;
+  }
+
+
+  .contact-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .contact-actions .btn {
+    width: 100%;
+  }
+
+
+  .footer-links {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+
+  .local-excel-panel {
+    left: 14px;
+
+    right: auto;
+
+    bottom: 14px;
+
+    width:
+      min(
+        250px,
+        calc(100vw - 105px)
+      );
+  }
+
+
+  .floating-whatsapp {
+    right: 14px;
+
+    bottom: 18px;
+
+    width: 58px;
+    height: 58px;
+
+    border-width: 3px;
+  }
+
+
+  .floating-whatsapp svg {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .config-notice {
+    width:
+      min(
+        calc(100% - 28px),
+        520px
+      );
+
+    bottom: 96px;
+  }
+
+}
+
+/* =========================================================
+   PERSONALIZACIÓN DESDE EL NUEVO EXCEL
+   ========================================================= */
+
+/* NAVEGACIÓN */
+.brand {
+  color: var(--header-name-text);
+}
+
+.nav-links {
+  color: var(--header-nav-text);
+}
+
+/* INICIO */
+.hero {
+  background-color: var(--hero-bg);
+}
+
+.hero:not(.has-background-image) .hero-overlay {
+  background: transparent;
+}
+
+.hero h1 {
+  color: var(--hero-title-text);
+}
+
+.hero-copy {
+  color: var(--hero-copy-text);
+}
+
+#heroCta {
+  background: var(--hero-cta-bg);
+  color: var(--hero-cta-text);
+}
+
+/* MENÚ */
+.menu-card-main {
+  background: var(--menu-card-bg);
+}
+
+.menu-card-main .eyebrow { color: var(--menu-eyebrow-text); }
+.menu-card-main h2 { color: var(--menu-title-text); }
+.menu-card-main > p:not(.eyebrow) { color: var(--menu-description-text); }
+
+#menuPdfBtn {
+  background: var(--menu-button-bg);
+  color: var(--menu-button-text);
+}
+
+/* BENEFICIOS */
+.benefits-section .section-heading .eyebrow {
+  color: var(--benefits-eyebrow-text);
+}
+
+.benefits-section .section-heading h2 {
+  color: var(--benefits-title-text);
+}
+
+.benefits-section .section-heading > p:not(.eyebrow) {
+  color: var(--benefits-description-text);
+}
+
+/* GALERÍA */
+.gallery-section {
+  background-color: var(--gallery-bg);
+}
+
+.gallery-section .gallery-heading h2 {
+  color: var(--gallery-title-text);
+}
+
+/* FAQ */
+.faq-section {
+  background-color: var(--faq-bg);
+}
+
+.faq-section .faq-heading h2 {
+  color: var(--faq-title-text);
+}
+
+/* CONTACTO */
+.contact-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--contact-bg);
+  background-image: none;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contact-section.has-background-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  /*
+  La imagen de fondo se muestra sin ser cubierta
+  por el color de respaldo de Contacto.
+  */
+  background: transparent;
+
+  pointer-events: none;
+}
+
+.contact-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-copy .eyebrow { color: var(--contact-eyebrow-text); }
+.contact-copy h2 { color: var(--contact-title-text); }
+.contact-copy .contact-intro { color: var(--contact-description-text); }
+
+.contact-item-address {
+  background: var(--address-card-bg);
+  color: var(--address-text);
+}
+.contact-item-address .contact-label,
+.contact-item-address strong { color: var(--address-text); }
+
+.contact-item-hours { background: var(--hours-card-bg); }
+.contact-item-hours .contact-label,
+.contact-item-hours .contact-days { color: var(--hours-days-text); }
+.contact-item-hours .contact-hours { color: var(--hours-hours-text); }
+
+.contact-item-phone {
+  background: var(--phone-card-bg);
+  color: var(--phone-text);
+}
+.contact-item-phone .contact-label,
+.contact-item-phone strong,
+.contact-item-phone a { color: var(--phone-text); }
+
+.contact-item-email {
+  background: var(--email-card-bg);
+  color: var(--email-text);
+}
+.contact-item-email .contact-label,
+.contact-item-email strong,
+.contact-item-email a { color: var(--email-text); }
+
+#mapsLink {
+  border-color: color-mix(in srgb, var(--maps-button-text) 60%, transparent);
+  background: var(--maps-button-bg);
+  color: var(--maps-button-text);
+}
+
+#contactWhatsapp {
+  background: var(--whatsapp-button-bg);
+  color: var(--whatsapp-button-text);
+}
+
+#contactWhatsapp:hover {
+  filter: brightness(0.94);
+}
+
+/* En las tarjetas generadas de Beneficios, app.js coloca variables
+   específicas en cada article para permitir colores independientes. */
+.benefit-card {
+  background: var(--benefit-card-bg, var(--surface-bg));
+}
+
+.benefit-card h3 {
+  color: var(--benefit-title-text, var(--text));
+}
+
+.benefit-card p {
+  color: var(--benefit-body-text, var(--muted));
+}
+
+.benefit-icon {
+  background: var(--benefit-icon-bg, color-mix(in srgb, var(--accent) 25%, var(--surface-bg)));
+}
+
+/* Ajustes de prioridad para el nuevo sistema de personalización */
+.site-header {
+  color: var(--header-nav-text);
+}
+
+.hero:not(.has-background-image) {
+  background-image: none;
+}
+
+#contactWhatsapp:hover {
+  background: var(--whatsapp-button-bg);
+  filter: brightness(0.94);
+}
